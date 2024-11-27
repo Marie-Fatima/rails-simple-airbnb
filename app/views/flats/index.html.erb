@@ -1,0 +1,30 @@
+<div class="m-4 text-center">
+<h1>All our Flats</h1>
+<p>All <%=@flats.count %> Flats</p>
+<%# #pour que si jamais un appart s efface sa change tout seule %>
+<a href="<%=new_flat_path%>"class="btn btn-primary">Add a flat</a>
+</div>
+
+<div class="container">
+<div class="row">
+<% @flats.each do |flat| %>
+
+
+  <div class="card col m-4 p-4" style="width: 18rem;">
+  <img class="card-img-top" src="https://media.istockphoto.com/id/1398814566/fr/photo/int%C3%A9rieur-du-petit-appartement-salon-pour-bureau-%C3%A0-domicile.jpg?s=1024x1024&w=is&k=20&c=F1QeCild2ZRbZHVMz3uY0fFSYotHlLtizuPwadpdcjQ=" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title"><%= flat.name%></h5>
+    <p class="card-text"><%= flat.address%></p>
+
+    <a href="<%=flat_path(flat)%>">More info</a>
+    <a href="#" class="text-warning">Edit</a>
+    <a href="#" class="text-danger">Remove</a>
+  </div>
+</div>
+
+<%end%>
+
+
+</div>
+
+</div>
